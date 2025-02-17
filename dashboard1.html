@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+       
+        body {
+        background-color: #f8f9fa; /* Light gray background for the page */
+    }
+    .card-stat { height: 120px; width: 230px; }
+    .heading{ font-size: 30px;}
+    .sidebar{
+        
+        background-color: white;
+        border-radius: 7px;
+        padding: 20px;
+        /* margin: 20px; */
+        width: 250px;
+        position: fixed;
+        top: 80px;
+        left: 10px;
+        height: calc(100vh - 100px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar a {
+        
+        display: block;
+        padding: 10px 5px;
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
+    
+     .sidebar a:hover, .sidebar .active {
+            background-color: #ebf0f4;
+            font-weight: bold;
+            color: #0075fa;
+            border-radius: 5px;
+        }
+        .main-content {
+            margin-left: 250px;
+            margin-top: 56px;
+            padding: 20px;
+        }
+        .table { table-layout: fixed; }
+        .table thead th { background-color: #f8f9fa; }
+        .nav-profile-btn { padding: 5px 10px; }
+        .blue-card { background-color: #b6cfff !important; }
+        .orange-card { background-color: #ffd2bc !important; }
+        .purple-card { background-color: #e1befe !important; }
+        .green-card { background-color: #cdffda !important; }
+        .section-container {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .custom-table {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 900px;
+    }
+    .custom-table thead th {
+       
+        padding: 15px 20px 20px 30px; 
+        background-color: transparent !important;
+        border-bottom: 1px solid #dee2e6;
+        font-size: 14px;
+        /* margin-left: 35px; */
+    }
+    .custom-table tbody td {
+        /* padding: 10px 15px 5px 22px;
+        white-space: nowrap;  */
+        font-size: 14px; 
+        
+    } 
+    
+    
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <a class="navbar-brand ms-2" href="#">HR Dashboard</a> -->
+            
+            <div class="d-flex align-items-center ms-auto">
+                <i class="bi bi-bell fs-5 me-3"></i>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/887a2720b71cf090aee65adb6a84959ac0272d8eb87a329a7256a7f4b503aba8?placeholderIfAbsent=true&apiKey=cf56109215cc47b8b8f9769b70de826a" class="rounded-circle me-3" alt="Profile" width="35" height="35">
+                <a href="#" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <a href="#" class="active" >Dashboard</a>
+                <a href="#" >Manage Jobs</a>
+                <a href="#" >Interview Process Management</a>
+                <a href="#" >Candidates Management</a>
+                <a href="#" >Reports and Analytics</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <h1 class="mb-4 heading">Welcome, Sudhanshu Kadul</h1>
+
+            <!-- Statistics Row -->
+            <div class="row mb-4 g-4">
+                <div class="col-3">
+                    <div class="card card-stat blue-card">
+                        <div class="card-body">
+                            <h2 class="card-title">15</h2>
+                            <p class="card-text">Total Open Jobs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-stat orange-card">
+                        <div class="card-body">
+                            <h2 class="card-title">04</h2>
+                            <p class="card-text">Total Applications Received</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-stat purple-card">
+                        <div class="card-body">
+                            <h2 class="card-title">05</h2>
+                            <p class="card-text">Scheduled Interviews</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-stat green-card">
+                        <div class="card-body">
+                            <h2 class="card-title">03</h2>
+                            <p class="card-text">Hires Made (Last 30 Days)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending Actions -->
+            <div class="section-container">
+                <h3 class="mb-4">Pending Actions</h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border">
+                            <div class="card-body">
+                                <h2 class="card-title">15</h2>
+                                <p class="card-text">Pending Job Postings</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border">
+                            <div class="card-body">
+                                <h2 class="card-title">04</h2>
+                                <p class="card-text">Pending Interviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border">
+                            <div class="card-body">
+                                <h2 class="card-title">03</h2>
+                                <p class="card-text">Pending Applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Job Postings -->
+            <div class="section-container">
+                <h3 class="mb-4">Recent Job Postings</h3>
+                <div class="table-responsive custom-table">
+                    <table class="table table-borderless w-full">
+                        <thead class="bg-light">
+                            <tr class="text-sm text-black">
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Job Title</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Department</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Location</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Date Posted</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Applicants</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Status</th>
+                                <th  class="px-4 py-4 font-semibold text-left border-b border-gray-200">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-3">Software Engineer</td>
+                                <td class="px-4 py-4">Engineering</td>
+                                <td class="px-4 py-4">New York</td>
+                                <td class="px-4 py-4">23/08/2025</td>
+                                <td class="px-4 py-4">35</td>
+                                <td class="px-4 py-4">
+                                    <span class="status-badge bg-primary text-white">Open</span>
+                                </td>
+                                <td class="px-4 py-4">
+                                    <button class="btn btn-link">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Software Engineer</td>
+                                <td class="px-4 py-4">Engineering</td>
+                                <td class="px-4 py-4">Cape Town</td>
+                                <td class="px-4 py-4">23/08/2025</td>
+                                <td class="px-4 py-4">35</td>
+                                <td class="px-4 py-4">
+                                    <span class="status-badge bg-danger text-white">Closed</span>
+                                </td>
+                                <td class="px-4 py-4">
+                                    <button class="btn btn-link">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Upcoming Interviews -->
+            <div class="section-container">
+                <h3 class="mb-4">Upcoming Interviews</h3>
+                <div class="table-responsive custom-table">
+                    <table class="table table-borderless">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Candidate</th>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Job Title</th>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Date & Time</th>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Location</th>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Interviewee</th>
+                                <th class="px-4 py-4 font-semibold text-left border-b border-gray-200">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-4">Sudhanshu Kadul</td>
+                                <td class="px-4 py-4">Software Engineering</td>
+                                <td class="px-4 py-4">Feb 15, 2025 10:00 AM</td>
+                                <td class="px-4 py-4">Zoom Link</td>
+                                <td class="px-4 py-4">John Doe</td>
+                                <td class="px-4 py-4">
+                                    <button class="btn btn-link">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4">Google</td>
+                                <td class="px-4 py-4">Software Engineering</td>
+                                <td class="px-4 py-4">Feb 15, 2025 10:00 AM</td>
+                                <td class="px-4 py-4">Zoom Link</td>
+                                <td class="px-4 py-4">John Doe</td>
+                                <td>
+                                    <button class="btn btn-link">
+                                       <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4">Google</td>
+                                <td class="px-4 py-4">Software Engineering</td>
+                                <td class="px-4 py-4">Feb 15, 2025 10:00 AM</td>
+                                <td class="px-4 py-4">Zoom Link</td>
+                                <td class="px-4 py-4">John Doe</td>
+                                <td class="px-4 py-4"><button class="btn btn-link">
+                                    <i class="bi bi-three-dots"></i>
+                                 </button></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4">Ayoyo</td>
+                                <td class="px-4 py-4">Frontend Developer</td>
+                                <td class="px-4 py-4">Feb 16, 2025 10:00 AM</td>
+                                <td class="px-4 py-4">Zoom Link</td>
+                                <td class="px-4 py-4">John Doe</td>
+                                <td class="px-4 py-4"><button class="btn btn-link">
+                                    <i class="bi bi-three-dots"></i>
+                                 </button></td>
+                            </tr>
+                            <!-- Additional rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

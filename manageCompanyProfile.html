@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Company Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #ebeced;
+        }
+        .nav-profile-btn { padding: 5px 10px; }
+        .sidebar {
+            height: auto;
+            background-color: white;
+            width: 250px;
+            padding-top: 20px;
+            padding-left: 20px;
+            margin-left: 20px;
+            border-radius: 10px;
+            margin-top: 19px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .sidebar a:hover, .sidebar .active {
+            background-color: #ebf0f4;
+            font-weight: bold;
+            color: #0075fa;
+            border-radius: 5px;
+        }
+        .profile-card, .social-accounts, .container-card {
+            padding: 20px;
+            border: 1px solid rgb(201, 200, 200);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .toggle-switch {
+            float: right;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .btn-container .btn {
+            margin-left: 10px;
+        }
+        .main-content-container {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: white;
+            padding: 20px;
+            margin-left: 8px;
+        }
+        .profile-actions {
+            margin-left: auto;
+        }
+        .main-content-heading{
+            margin-top: 0;
+            font-size: 20px;
+            margin-left: 8px;
+        }
+
+        /* Added border to the table */
+        .container-card table {
+            border: 1px solid #dee2e6; /* Outline border */
+            border-radius: 15px; /* Optional: rounded corners for the table */
+            /* border-collapse: collapse; Ensures the borders between cells are merged */
+        }
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="d-flex align-items-center ms-auto">
+            <i class="bi bi-bell fs-5 me-3"></i>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/887a2720b71cf090aee65adb6a84959ac0272d8eb87a329a7256a7f4b503aba8?placeholderIfAbsent=true&apiKey=cf56109215cc47b8b8f9769b70de826a" class="rounded-circle me-3" alt="Profile" width="35" height="35">
+            <a href="#" class="btn btn-primary">Logout</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <a href="#">Dashboard</a>
+                <a href="#">Search Jobs</a>
+                <a href="#">My Applications</a>
+                <a href="#">Interview Schedule</a>
+                <a href="#" class="active">My Profile</a>
+                <a href="#">Documents</a>
+                <a href="#">Offer Letter</a>
+            </div>
+            <div class="col-md-9 p-4">
+                <!-- Wrapped all content in main-content-container -->
+                <h3 class="main-content-heading">Manage Company Profile</h3>
+                <div class="main-content-container">
+                    
+                    <div class="profile-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/887a2720b71cf090aee65adb6a84959ac0272d8eb87a329a7256a7f4b503aba8" class="rounded-circle me-3" width="40" height="40" alt="Profile Picture">
+                            
+                            
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div>
+                                <p class="mb-1">Profile Picture</p>
+                                <small>PNG, JPG under 500KB</small>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn btn-outline-secondary btn-sm me-2">Remove</button>
+                                <button class="btn btn-primary btn-sm">Upload Image</button>
+                            </div>
+                      </div><br>
+                        <div class="mb-3">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-control" value="Avyro HR Solutions" disabled>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="sudhanshu@gmail.com" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" value="8007340395" disabled>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" value="123 Street, Silicon Valley" disabled>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Company Description</label>
+                            <textarea class="form-control" rows="3" disabled>Tech Innovators is a leading technology solutions company dedicated to creating cutting-edge software to solve modern business challenges. We value innovation, collaboration, and creativity.</textarea>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-accounts">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>Social Accounts</h5>
+                            <button class="btn btn-primary btn-sm">Add New Link</button>
+                        </div>                    
+                        <div class="mb-3">
+                            <label class="form-label">Website</label>
+                            <input type="text" class="form-control" value="www.Avyro.com" disabled>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Linkedin</label>
+                            <input type="text" class="form-control" value="123 Street, Silicon Valley" disabled>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Dribble</label>
+                            <input type="text" class="form-control" value="123 Street, Silicon Valley" disabled>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input" type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>Videos</h5>
+                            <button class="btn btn-primary btn-sm">Upload New Video</button>
+                        </div> <br>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Video Name</th>
+                                    <th>Upload Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Why Join us?</td>
+                                    <td>Feb 15, 2025</td>
+                                    <td>...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
